@@ -1,17 +1,20 @@
-import React, {useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import useAppState from 'src/Hooks/useAppState';
 import AppStateHandler, {AppStateType} from 'src/AppState/AppStateHandler';
-import Container from 'src/Components/Container/Container';
-import Center from 'src/Components/Center/Center';
+import React, {useEffect} from 'react';
+
 import {ActivityIndicator} from 'react-native-paper';
 import AuthStackNavigator from './AuthStackNavigator';
+import Center from 'src/Components/Center/Center';
+import Container from 'src/Components/Container/Container';
+import {NavigationContainer} from '@react-navigation/native';
 import RootStackNavigator from './RootStackNavigator';
+import SplashScreen from 'react-native-splash-screen';
+import useAppState from 'src/Hooks/useAppState';
 
 function AppRouter() {
   const {loading, loggedIn}: AppStateType = useAppState();
 
   useEffect(() => {
+    SplashScreen.hide();
     setTimeout(() => {
       AppStateHandler.setValue('loading', false);
     }, 2000);

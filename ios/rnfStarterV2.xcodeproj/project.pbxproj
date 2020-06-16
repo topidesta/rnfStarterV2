@@ -194,7 +194,6 @@
 				B0A238B9FEB550651F20FB54 /* Pods-rnfStarterV2-tvOSTests.debug.xcconfig */,
 				62E9EADBFAAA4EC5C52297FE /* Pods-rnfStarterV2-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -740,7 +739,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnfStarterV2;
 				PRODUCT_NAME = rnfStarterV2;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -762,7 +761,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnfStarterV2;
 				PRODUCT_NAME = rnfStarterV2;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
