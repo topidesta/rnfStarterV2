@@ -55,6 +55,7 @@
 		2D02E4901E0B4A5D006451C7 /* rnfStarterV2-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rnfStarterV2-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3716A63063697B968BC81463 /* libPods-rnfStarterV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnfStarterV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37276D28D219C8559CBC8FAB /* Pods-rnfStarterV2-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnfStarterV2-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rnfStarterV2-tvOS/Pods-rnfStarterV2-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		3B643A2924A1D6A500272562 /* rnuc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = rnuc.xcconfig; sourceTree = "<group>"; };
 		40A043E71224C1A7DC73C68B /* libPods-rnfStarterV2-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnfStarterV2-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4666FC925F39558B52D8347C /* libPods-rnfStarterV2-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnfStarterV2-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55165A507A98CC7B050C7C11 /* Pods-rnfStarterV2-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnfStarterV2-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rnfStarterV2-tvOS/Pods-rnfStarterV2-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				3B643A2924A1D6A500272562 /* rnuc.xcconfig */,
 				13B07FAE1A68108700A75B9A /* rnfStarterV2 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* rnfStarterV2Tests */,
@@ -880,6 +882,7 @@
 		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B643A2924A1D6A500272562 /* rnuc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -940,6 +943,7 @@
 		};
 		83CBBA211A601CBA00E9B192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B643A2924A1D6A500272562 /* rnuc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
