@@ -1,3 +1,4 @@
+import AppStateHandler from 'src/StateHandlers/AppStateHandler';
 import {useForm} from 'react-hook-form';
 import {useMemo} from 'react';
 
@@ -61,7 +62,9 @@ function useRegisterScreen() {
     [],
   );
 
-  const onSubmit = form.handleSubmit(() => {});
+  const onSubmit = form.handleSubmit(() => {
+    AppStateHandler.setValue('loggedIn', true);
+  });
 
   return {form, formConfigArray, onSubmit};
 }

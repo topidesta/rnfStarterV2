@@ -1,3 +1,4 @@
+import AppStateHandler from 'src/StateHandlers/AppStateHandler';
 import {useForm} from 'react-hook-form';
 import {useMemo} from 'react';
 
@@ -46,7 +47,9 @@ function useLoginScreen() {
     [],
   );
 
-  const onSubmit = form.handleSubmit(() => {});
+  const onSubmit = form.handleSubmit(() => {
+    AppStateHandler.setValue('loggedIn', true);
+  });
 
   return {form, formConfigArray, onSubmit};
 }

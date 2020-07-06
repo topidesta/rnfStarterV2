@@ -1,4 +1,4 @@
-import AppStateHandler, {AppStateType} from 'src/AppState/AppStateHandler';
+import AppStateHandler, {useAppState} from 'src/StateHandlers/AppStateHandler';
 import React, {useEffect} from 'react';
 
 import {ActivityIndicator} from 'react-native-paper';
@@ -8,15 +8,16 @@ import Container from 'src/Components/Container/Container';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStackNavigator from './RootStackNavigator';
 import SplashScreen from 'react-native-splash-screen';
-import useAppState from 'src/Hooks/useAppState';
 
 function AppRouter() {
-  const {loading, loggedIn}: AppStateType = useAppState();
+  const loggedIn = useAppState('loggedIn');
+  const loading = useAppState('loading');
 
   useEffect(() => {
     SplashScreen.hide();
     setTimeout(() => {
       AppStateHandler.setValue('loading', false);
+      AppStateHandler.setState({});
     }, 2000);
   }, []);
 

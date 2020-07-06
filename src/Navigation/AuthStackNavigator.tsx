@@ -11,7 +11,7 @@ function AuthStackNavigator() {
       <AuthStack.Screen
         name="Home"
         component={HomeScreen}
-        options={{header: HeaderMain, headerTitle: 'Login'}}
+        options={{header: HeaderMain, headerTitle: 'Home'}}
       />
     </AuthStack.Navigator>
   );

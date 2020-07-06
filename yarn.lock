@@ -5310,10 +5310,10 @@ react@16.11.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactive-state-handler@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/reactive-state-handler/-/reactive-state-handler-0.0.6.tgz#e3930725db8ffa22c1f2426b7dc674e6e2284f4f"
-  integrity sha512-cJ/XvsRH42lXS1LNZugc7wopmQ0u64ZbR+DnZXhQvy5ajnbFk6bcFycER5CXp7KNTyBTZMqQUMD8u4v+gRdgcQ==
+reactive-state-handler@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/reactive-state-handler/-/reactive-state-handler-0.0.8.tgz#2e8521a7468fddb5094271960b33ce952f16e80c"
+  integrity sha512-E+EzsqA5/sAgxnxIG9pNKCGPYcJENT+CBFKSbReI/geseI6P8v+VXeDyn2qZV9Pg+FsGFHTcWDfmS9nauab2+w==
 
 read-pkg-up@^4.0.0:
   version "4.0.0"
