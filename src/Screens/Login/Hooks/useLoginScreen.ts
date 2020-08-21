@@ -25,7 +25,6 @@ function useLoginScreen() {
         textInputProps: {
           keyboardType: 'email-address',
           autoCapitalize: 'none',
-          leftIcon: 'email',
         },
       },
       {
@@ -40,7 +39,6 @@ function useLoginScreen() {
         },
         textInputProps: {
           secureTextEntry: true,
-          leftIcon: 'lock',
         },
       },
     ],

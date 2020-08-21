@@ -1,28 +1,72 @@
-import {useEffect, useRef, useState} from 'react';
+import {useLayoutEffect, useRef, useState, useCallback} from 'react';
 
 import {Subscription} from 'rxjs';
+import ReactiveState from 'reactive-state-handler';
+import isEqual from 'lodash.isequal';
 
-function useReactiveStateHandler(Handler: any, keyName?: string) {
+function useReactiveStateHandler(
+  Handler: ReactiveState,
+  filterKeys?: Array<string>,
+): any {
+  const handlerRef = useRef<ReactiveState>(Handler);
+  const filterKeysRef = useRef<Array<string> | undefined>(filterKeys);
   const listenerRef = useRef<Subscription>();
   const [value, setValue]: any = useState(
-    keyName ? Handler.getValue(keyName) : Handler.getState(),
+    _getInitialValue(filterKeysRef.current, handlerRef.current),
   );
-  useEffect(() => {
-    listenerRef.current = Handler.subscriber$.subscribe((state: any) => {
-      if (keyName) {
-        setValue(state[keyName]);
-      } else {
-        setValue(state);
-      }
-    });
-    return () => {
-      if (listenerRef.current) {
-        listenerRef.current.unsubscribe();
-      }
-    };
-  }, [Handler.subscriber$, keyName]);
 
-  return value;
+  const removeListener = useCallback(() => {
+    if (listenerRef.current) {
+      listenerRef.current.unsubscribe();
+    }
+  }, []);
+
+  const addListener = useCallback(() => {
+    removeListener();
+    listenerRef.current = handlerRef.current.subscriber$.subscribe(
+      (state: any) => {
+        if (Array.isArray(filterKeysRef.current)) {
+          if (filterKeysRef.current.length > 0) {
+            setValue((_value: any) => {
+              if (filterKeysRef.current) {
+                const _nextValue = _pick(filterKeysRef.current, state);
+                return isEqual(_value, _nextValue) ? _value : _nextValue;
+              }
+            });
+          } else {
+            setValue(state);
+          }
+        } else {
+          setValue(state);
+        }
+      },
+    );
+  }, [removeListener]);
+
+  useLayoutEffect(() => {
+    addListener();
+    return removeListener;
+  }, [addListener, removeListener]);
+
+  return [value, removeListener, addListener];
 }
+
+const _pick = (_arr: Array<string>, _object: any) => {
+  return _arr.reduce((result: any, key) => {
+    result[key] = _object[key];
+    return result;
+  }, {});
+};
+
+const _getInitialValue = (
+  keys: Array<string> | undefined,
+  handler: ReactiveState,
+) => {
+  return Array.isArray(keys)
+    ? keys.length > 0
+      ? _pick(keys, handler.getState())
+      : handler.getState()
+    : handler.getState();
+};
 
 export default useReactiveStateHandler;

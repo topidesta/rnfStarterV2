@@ -23,9 +23,6 @@ function useRegisterScreen() {
             message: 'Name is required',
           },
         },
-        textInputProps: {
-          leftIcon: 'account',
-        },
       },
       {
         type: 'input',
@@ -40,7 +37,6 @@ function useRegisterScreen() {
         textInputProps: {
           keyboardType: 'email-address',
           autoCapitalize: 'none',
-          leftIcon: 'email',
         },
       },
       {
@@ -55,7 +51,6 @@ function useRegisterScreen() {
         },
         textInputProps: {
           secureTextEntry: true,
-          leftIcon: 'lock',
         },
       },
     ],

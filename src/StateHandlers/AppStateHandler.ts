@@ -37,13 +37,8 @@ const AppStateHandler: AppStateHandlerInterface = new ReactiveState({
 
 export default AppStateHandler;
 
-export function useAppState(): AppStateType;
-
-export function useAppState(keyName: 'loggedIn'): boolean;
-export function useAppState(keyName: 'user'): any;
-export function useAppState(keyName: 'jwt'): string;
-export function useAppState(keyName: 'loading'): boolean;
-
-export function useAppState(keyName?: keyof AppStateType) {
-  return useReactiveStateHandler(AppStateHandler, keyName);
+export function useAppState(
+  filterKeys?: Array<keyof AppStateType>,
+): [AppStateType, () => {}, () => {}] {
+  return useReactiveStateHandler(AppStateHandler, filterKeys);
 }
