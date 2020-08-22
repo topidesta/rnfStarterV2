@@ -5327,10 +5327,13 @@ react@16.11.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactive-state-handler@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/reactive-state-handler/-/reactive-state-handler-0.0.8.tgz#2e8521a7468fddb5094271960b33ce952f16e80c"
-  integrity sha512-E+EzsqA5/sAgxnxIG9pNKCGPYcJENT+CBFKSbReI/geseI6P8v+VXeDyn2qZV9Pg+FsGFHTcWDfmS9nauab2+w==
+reactive-state-handler@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/reactive-state-handler/-/reactive-state-handler-1.0.0.tgz#414742d559b86ca022bd91bf1ee5189040aeac73"
+  integrity sha512-45WOXaMvQoNE1Q2ezOMy7hn8WkIagYfEujrTKQB/GSy21yhfsyBbrii0K9eswX3dKEUb7BxUXwTwVp0Tnj1JRA==
+  dependencies:
+    "@types/lodash.isequal" "^4.5.5"
+    lodash.isequal "^4.5.0"
 
 read-pkg-up@^4.0.0:
   version "4.0.0"

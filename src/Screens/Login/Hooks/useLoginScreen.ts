@@ -46,7 +46,7 @@ function useLoginScreen() {
   );
 
   const onSubmit = form.handleSubmit(() => {
-    AppStateHandler.setValue('loggedIn', true);
+    AppStateHandler.setState({loggedIn: true});
   });
 
   return {form, formConfigArray, onSubmit};

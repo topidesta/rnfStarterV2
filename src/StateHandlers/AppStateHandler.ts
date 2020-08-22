@@ -1,6 +1,5 @@
 import {BehaviorSubject} from 'rxjs';
-import ReactiveState from 'reactive-state-handler';
-import useReactiveStateHandler from 'src/Hooks/useReactiveStateHandler';
+import {ReactiveState, useReactiveStateHandler} from 'reactive-state-handler';
 
 export type AppStateType = {
   loggedIn: boolean;
@@ -12,16 +11,6 @@ export type AppStateType = {
 interface AppStateHandlerInterface {
   initialState: AppStateType;
   subscriber$: BehaviorSubject<AppStateType>;
-
-  setValue(keyName: 'loggedIn', value: boolean): void;
-  setValue(keyName: 'user', value: any): void;
-  setValue(keyName: 'jwt', value: string): void;
-  setValue(keyName: 'loading', value: boolean): void;
-
-  getValue(keyName: 'loggedIn'): boolean;
-  getValue(keyName: 'user'): any;
-  getValue(keyName: 'jwt'): string;
-  getValue(keyName: 'loading'): boolean;
 
   setState(values: Partial<AppStateType>): void;
   getState(): AppStateType;
@@ -37,8 +26,12 @@ const AppStateHandler: AppStateHandlerInterface = new ReactiveState({
 
 export default AppStateHandler;
 
+type addListener = () => void;
+
+type removeListener = () => void;
+
 export function useAppState(
   filterKeys?: Array<keyof AppStateType>,
-): [AppStateType, () => {}, () => {}] {
+): [Partial<AppStateType>, removeListener, addListener] {
   return useReactiveStateHandler(AppStateHandler, filterKeys);
 }

@@ -17,8 +17,10 @@ function HeaderMain(props: StackHeaderProps) {
         onPress={() => {
           AppStateHandler.resetState();
           setTimeout(() => {
-            AppStateHandler.setValue('loading', false);
-          });
+            AppStateHandler.setState({
+              loading: false,
+            });
+          }, 2000);
         }}
         accessibilityStates
       />

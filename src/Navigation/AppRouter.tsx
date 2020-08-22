@@ -10,14 +10,12 @@ import RootStackNavigator from './RootStackNavigator';
 import SplashScreen from 'react-native-splash-screen';
 
 function AppRouter() {
-  const [{loggedIn, loading}] = useAppState(['loggedIn', 'loading', 'user']);
-
-  console.log(loggedIn, loading);
+  const [{loggedIn, loading}] = useAppState(['loggedIn', 'loading']);
 
   useEffect(() => {
     SplashScreen.hide();
     setTimeout(() => {
-      AppStateHandler.setValue('loading', false);
+      AppStateHandler.setState({loading: false});
     }, 2000);
   }, []);
 

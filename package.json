@@ -32,7 +32,7 @@
     "react-native-splash-screen": "^3.2.0",
     "react-native-ultimate-config": "^3.1.2",
     "react-native-vector-icons": "^6.6.0",
-    "reactive-state-handler": "^0.0.8",
+    "reactive-state-handler": "^1.0.0",
     "rxjs": "^6.5.5"
   },
   "devDependencies": {
